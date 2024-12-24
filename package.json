@@ -1,0 +1,15 @@
+{
+  "name": "@ofigelov/storefactory",
+  "version": "0.0.1",
+  "browser": "./src/index.ts",
+  "main": "./src/index.ts",
+  "scripts": {
+    "publish": "yarn npm publish --access public"
+  },
+  "devDependencies": {
+    "@ofigelov/weakrefmap": "0.0.1",
+    "prettier": "3.4.2",
+    "typescript": "5.6.2"
+  },
+  "packageManager": "yarn@4.5.3"
+}
