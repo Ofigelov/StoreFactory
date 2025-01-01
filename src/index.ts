@@ -36,7 +36,7 @@ export class StoreFactory<
     private readonly store: NewableStore<TStore, TConstructorParameters>,
   ) {}
 
-  public getInstance = (key: Key, ...params: TConstructorParameters) => {
+  public getInstance = (key: Key, ...params: TConstructorParameters): TStore => {
     const keyHash = serialize(key);
 
     const store = this.storage.get(keyHash);
