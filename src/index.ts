@@ -32,6 +32,8 @@ export class StoreFactory<
 > {
   private storage = new WeakRefMap<TStore>();
 
+  private singleInstanceKey = Math.random().toString();
+
   constructor(
     private readonly store: NewableStore<TStore, TConstructorParameters>,
   ) {}
@@ -50,5 +52,13 @@ export class StoreFactory<
     }
 
     return store;
+  };
+
+  /**
+   * метод для получения инстанса без использования ключа,
+   * т.е. возможен только инстанс, похоже на синглтон, пока есть потребители
+   */
+  public getSingleInstance = (...params: TConstructorParameters) => {
+    return this.getInstance(this.singleInstanceKey, ...params);
   };
 }
